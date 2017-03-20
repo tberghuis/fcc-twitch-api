@@ -1,0 +1,35 @@
+{
+  "name": "fcc-twitch-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline",
+    "tmp": "watchify tmp/tmp.js -o tmp/bundle.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "css-loader": "^0.27.3",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.1"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "jsonp": "^0.2.1",
+    "mobx": "^3.1.5",
+    "mobx-react": "^4.1.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}

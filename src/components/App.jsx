@@ -11,7 +11,7 @@ class App extends Component {
 
     render() {
         return (
-            <div class="page">
+            <div class="container">
                 <h1>FCC Twitch Streamers</h1>
                 <div>
                     <div><input type="checkbox" checked={this.showStreaming} /> Streaming</div>

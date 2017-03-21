@@ -1,35 +1,39 @@
+import Channel from '../stores/Channel.js';
+const jsonp = require('jsonp');
 
-// import { observable, computed } from 'mobx'
+const channelNames = ["ESL_SC2", "pokemontcg", "freecodecamp", "adobe", "Nightblue3", "somuchmonsters", "williamchyr", "triplegzgaming", "geekandgamergirl"];
 
-import Channel from '../stores/Channel.js'
+export default {
+    populateChannelList(channelList) {
+        channelNames.forEach((name) => {
+            jsonp('https://wind-bow.gomix.me/twitch-api/streams/' + name, null, function (err, data) {
+                if (err) {
+                    console.error(err.message);
+                } else {
+                    let channel = new Channel();
+                    channel.name = name;
+                    channel.streaming = !!data.stream;
+                    channel.game = data.stream ? data.stream.game : "offline";
+                    //channelList.push(channel);
+                    jsonp('https://wind-bow.gomix.me/twitch-api/channels/' + name, null, function (err, data) {
+                        if (err) {
+                            console.error(err.message);
+                        } else {
+                            channel.logo = data.logo;
+                            channelList.push(channel);
+                        }
+                    });
 
-const channelList = ["ESL_SC2", "pokemontcg", "freecodecamp", "adobe", "Nightblue3", "somuchmonsters", "williamchyr", "triplegzgaming"];
 
-class TwitchService {
-    constructor() {
-        // api call here for now
-
-        this.channels = channelList.map((channel)=>{
-            // axios get
-
-            // log
-
-            // fill with data
-            return new Channel(channel);
+                }
+            });
         });
 
-        this.refreshStreamingStatus();
+
+
+    },
+    myMethod2(args) {
+        console.log('bar');
     }
-
-
-    refreshStreamingStatus = () => {
-        // axios here
-    }
-
-}
-
-const twitchService = new TwitchService();
-
-export default twitchService;
-
+};
 

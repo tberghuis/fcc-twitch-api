@@ -4,11 +4,11 @@
 
 
 export default class Channel {
-    icon;
+    logo;
     name;
 
     streaming; // true/false
-    title; // currently streaming title / offline
+    game; // currently streaming title / offline
     
 }
 

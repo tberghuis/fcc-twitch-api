@@ -1,10 +1,7 @@
-
 // import partials ...
-
-
 // experiment
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 .logo {
@@ -14,4 +11,17 @@
   border: 3px solid #e1e1e6;
 }
 
+.twitch-channel {
+  display: flex;
+  .game {
+    text-overflow: ellipsis;
+  }
+}
+
+.twitch-channel.streaming {
+  background-color: #7af774;
+}
+.twitch-channel.offline {
+  background-color: #f77474;
+}
 

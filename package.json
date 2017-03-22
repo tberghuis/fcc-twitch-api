@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline",
-    "tmp": "watchify tmp/tmp.js -o tmp/bundle.js"
+    "tmp": "watchify tmp/tmp.js -o tmp/bundle.js",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
